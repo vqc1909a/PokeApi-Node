@@ -1,0 +1,88 @@
+.details{
+ min-height: 85vh;
+ &__intro{
+  padding: 1rem;
+  position: relative;
+  h2{
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 10px;
+   font-size: 2rem;
+   margin: 2rem 0 1rem 0;
+   @media only screen and (min-width: 768px){
+    font-size: 2.5rem;
+   }
+  }
+ }
+ &__icon{
+  position: absolute;
+  left: -5%;
+  top: 30%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background-color: #FF0030;
+  padding: .6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (min-width: 768px){
+   left: 0%;
+   top: 50%
+  }
+ }
+ &__grid{
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 768px){
+   flex-direction: row;
+  }
+ }
+ &__info{
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem  0;
+  h3{
+   align-items: center;
+   text-transform: uppercase;
+   margin-bottom: 1.5rem;
+   font-size: 1.5rem;
+  }
+  li{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 1rem;
+   strong{
+    text-align: left;
+    text-transform: capitalize;
+   }
+  }
+ }
+ &__image{
+  flex: 2;
+  padding: 2rem;
+  height: 400px;
+  order: -1;
+  img{
+   width: 100%;
+   height: 100%;
+   vertical-align: top;
+  }
+  @media only screen and (min-width: 768px){
+   order: 0;
+  }
+ }
+ &__data{
+  margin-left: .5rem;
+  &--special{
+   padding: .5rem;
+   border-radius: 5px;
+   text-transform: uppercase;
+   color: white;
+  }
+ }
+}
+

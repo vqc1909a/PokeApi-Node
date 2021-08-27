@@ -1,0 +1,35 @@
+<div class="button">
+ <div class="button__grid">
+  <% if(page >= 1 && page <= 3){ %>
+   <button type="button" data-number="<%= (page - 1)%>" class="button__item <%= (page === 1) && 'button__item--disabled' %>">&laquo;</button>
+   <% [...Array(page + 1).keys()].forEach((number) => { %>
+    <button type="button" data-number="<%= (number + 1)%>" class="button__item <%= (page === (number + 1)) && 'button__item--active'%>"><%= (number + 1)%></button>
+   <% })  %>
+   <button type="button" class="button__item button__item--disabled">...</button>
+   <button type="button" data-number="<%= totalPages %>" class="button__item <%= (page === totalPages) && 'button__item--active'%>"><%= totalPages %></button>
+   <button type="button" data-number="<%= (page + 1) %>" class="button__item <%= (page === totalPages) && 'button__item--disabled' %>">&raquo;</button>
+  <% } %>
+
+  <% if(page >= 4 && page <= (totalPages - 3)){ %>
+   <button type="button" data-number="<%= (page - 1)%>" class="button__item <%= (page === 1) && 'button__item--disabled' %>">&laquo;</button>
+   <button type="button" data-number="1" class="button__item <%= (page === 1) && 'button__item--active' %>">1</button>
+   <button type="button" class="button__item button__item--disabled">...</button>
+   <% [...Array(page - 2, page - 1, page).values()].forEach((number) => { %>
+    <button type="button" data-number="<%= (number + 1)%>" class="button__item <%= (page === (number + 1)) && 'button__item--active'%>"><%= (number + 1)%></button>
+   <% })  %>
+   <button type="button" class="button__item button__item--disabled">...</button>
+   <button type="button" data-number="<%= totalPages %>" class="button__item <%= (page === totalPages) && 'button__item--active' %>"><%= totalPages %></button> 
+   <button type="button" data-number="<%= (page + 1) %>" class="button__item <%= (page === totalPages) && 'button__item--disabled' %>">&raquo;</button>
+  <% } %>
+
+  <% if(page >= (totalPages - 2) && page <= totalPages){ %>
+   <button type="button" data-number="<%= (page - 1)%>" class="button__item <%= (page === 1) && 'button__item--disabled' %>">&laquo;</button>
+   <button type="button" data-number="1" class="button__item <%= (page === 1) && 'button__item--active' %>">1</button>
+   <button type="button" class="button__item button__item--disabled">...</button>
+   <% [...Array((totalPages - page) + 2).keys()].reverse().map((number) => { %>
+    <button type="button" data-number="<%= (totalPages - number)%>" class="button__item <%= (page === (totalPages - number)) && 'button__item--active'%>"><%= (totalPages - number)%></button>
+   <% }) %>
+   <button type="button" data-number="<%= (page + 1) %>" class="button__item <%= (page === totalPages) && 'button__item--disabled' %>">&raquo;</button>
+  <% } %> 
+ </div>
+</div>

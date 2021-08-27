@@ -1,0 +1,14 @@
+<div class="card container">
+  <div class="card__grid">
+   <% pokemones.forEach(({id, name, photo}) => { %>
+    <a href="/pokemon/<%= id %>" class="card__item">
+      <div class="card__image">
+        <img src="<%= photo %>" loading="lazy" alt="<%= name %>" />
+      </div>
+      <div class="card__text">
+        <h3><%= name %></h3>
+      </div>
+     </a>
+   <% }) %>
+  </div>
+</div> 

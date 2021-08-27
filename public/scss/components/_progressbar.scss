@@ -1,0 +1,14 @@
+.progress{
+ width: 200px;
+ background-color: rgb(214, 205, 205);
+ box-shadow: 0px 1px 5px rgba(0, 0, 0, .1);
+ position: relative;
+ border-radius: 15px;
+ overflow: hidden;
+}
+.progress span{
+ display: block;
+ text-align: center;
+ color: white;
+ border-radius: 15px;
+}

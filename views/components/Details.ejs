@@ -1,0 +1,49 @@
+<div class="details container">
+ <div>
+   <div class="details__intro">
+     <h2 style="color: <%= pokemon.types[0].color %>"><%= pokemon.name %></h2>
+     <a href="/" class="details__icon">
+       <img src="/icons/iconReturn.svg" alt="return-icon" />
+     </a>
+   </div>
+   <div class="details__grid">
+     <div class="details__info">
+       <h3 style="color: <%= pokemon.types[0].color %>">Profile</h3>
+       <ul>
+         <li><strong>ID</strong> <span>#<%= pokemon.id %></span></li>
+         <li><strong>Height</strong> <span><%= pokemon.height %>m</span></li>
+         <li><strong>Weight</strong> <span><%= pokemon.weight %>kg</span></li>
+
+         <li><strong>Abilities</strong> <span>
+         <% pokemon.abilities.forEach((ability) => { %>
+          <span class="details__data"><%= ability %></span>
+         <% }) %></span></li>
+
+         <li><strong>Type</strong> <span>
+         <% pokemon.types.forEach(({color, name}) => { %>
+          <span class="details__data details__data--special" style="background-color: <%= color %>" ><%= name %></span>
+         <% }) %></span></li>
+
+         
+         <li><strong>Forms</strong> <span>
+         <% pokemon.form.forEach((form) => { %>
+          <span class="details__data"><%= form %></span>
+         <% }) %></span></li>
+       </ul>
+     </div>
+     <div class="details__image">
+       <img src="<%= pokemon.photo || pokemon.photo_respaldo %>" alt="<%= pokemon.name %>" />
+     </div>
+     <div class="details__info">
+       <h3 style="color: <%= pokemon.types[0].color %>">Stats</h3>
+       <ul>
+         <% pokemon.stats.forEach(({name, base_stat}) => { %> 
+          <li><strong><%= name %></strong> <span class="details__data">
+          <%- include("./ProgressBar", {bg: pokemon.types[0].color, width: base_stat}) %>
+          </span></li>
+         <% }) %>
+       </ul>
+     </div>
+   </div>
+ </div>
+</div>

@@ -1,0 +1,14 @@
+.header{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 15vh;
+ background-color: #FF0030;
+ position: sticky;
+ top: 0;
+ z-index: 1;
+ &__title a{
+   color: white;
+   letter-spacing: 15px;
+  }
+}

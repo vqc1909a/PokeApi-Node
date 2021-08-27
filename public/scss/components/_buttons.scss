@@ -1,0 +1,36 @@
+.button{
+ min-height: 15vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ &__grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ }
+ &__item{
+  display: block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1.25rem; 
+  font-size: 1.25rem;
+  color: white;
+  background-color: #EF5350;
+  &:hover{
+   background-color: #e94141
+  }
+  &:not(:last-child){
+   margin-right: .5rem
+  }
+  &--active{
+   background-color: #D32B2B;
+  }
+  &--disabled{
+   pointer-events: none;
+   background-color: rgba(233, 65, 65, .5);
+  }
+ }
+}
